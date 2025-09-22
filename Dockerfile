@@ -1,18 +1,20 @@
-# Use an official Node.js base image
-   FROM node:16
+Use official Node.js base image
+FROM node:16
 
-   # Create app directory
-   WORKDIR /app
+Set working directory
+WORKDIR /app
 
-   # Copy package.json and install dependencies
-   COPY package*.json ./
-   RUN npm install
+Copy package files and install dependencies
+COPY package*.json ./
+RUN npm install
 
-   # Copy the rest of your app
-   COPY . .
+Copy all other source code
+COPY . .
 
-   # Expose the app port (adjust if your app uses a different one)
-   EXPOSE 5000
+Expose the port the app runs on
+EXPOSE 5000
 
-   # Run the app
-   CMD ["node", "index.js"]
+Start the app
+CMD ["node", "index.js"]
+ 
+
