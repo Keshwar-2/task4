@@ -21,3 +21,13 @@ Docker Image
 Part of 45-day internship @ Elevate Labs
 
 
+Interview question to preapre according to task..
+ 
+What is CI/CD?
+How do GitHub Actions work?
+What are runners?
+Difference between jobs and steps.
+How to secure secrets in GitHub Actions?
+How to handle deployment errors?
+Explain the Docker build-push workflow.
+How can you test a CI/CD pipeline locally?
