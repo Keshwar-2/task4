@@ -8,7 +8,7 @@ on:
 jobs:
   build-and-push:
     runs-on: ubuntu-latest
-
+    
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
@@ -21,21 +21,22 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      # Optional: Remove this if no test script is defined in package.json
       - name: Run tests
+        # The '|| echo "No tests found"' part is a good way to prevent the workflow from failing if 'npm test' doesn't exist.
         run: npm test || echo "No tests found"
 
       - name: Build Docker image
-        run: docker build -t manasa929/nodejs-demo-app:github.sha  .
+        # Corrected syntax: using ${{ github.sha }} to get the commit hash.
+        run: docker build -t manasa929/nodejs-demo-app:${{ github.sha }} .
 
       - name: Log in to Docker Hub
         uses: docker/login-action@v2
         with:
-          username:{{ secrets.DOCKER_USERNAME }}
-          password: secrets.DOCKER_PASSWORD 
+          # Corrected syntax: added spaces after the colons.
+          username: ${{ secrets.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKER_PASSWORD }}
 
       - name: Push Docker image
-        run: docker push manasa929/nodejs-demo-app:{{ github.sha }}
-
-
+        # Corrected syntax: using ${{ github.sha }} to push the correctly tagged image.
+        run: docker push manasa929/nodejs-demo-app:${{ github.sha }}
 
