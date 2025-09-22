@@ -5,10 +5,8 @@ FROM node:16-alpine
 WORKDIR /app
 
 # Copy package files and install dependencies
-# This is a best practice to leverage Docker's build cache.
-# Changes to source code (COPY . .) won't invalidate this step.
 COPY package*.json ./
-RUN npm install
+RUN npm install --verbose
 
 # Copy all other source code
 COPY . .
@@ -18,5 +16,6 @@ EXPOSE 5000
 
 # Start the app
 CMD ["node", "index.js"]
+
 
 
