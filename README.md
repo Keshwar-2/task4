@@ -1,15 +1,24 @@
-# Calculator
-Create your own Python Calculator App using Python and tkinter.
+DevOps Version-Controlled Project
 
-Video Link: [https://youtu.be/QZPv1y2znZo](https://youtu.be/QZPv1y2znZo)
+Overview  
+This project demonstrates Git best practices for managing a DevOps project with proper branching, commits, pull requests, and documentation.
 
-![Calculator App](calculator.png)
+Branches  
+- main: Stable production-ready code  
+- dev: Active development  
+- feature: Specific new features  
 
----
+How to Use  
+1. Clone the repository  
+2. Checkout appropriate branch (dev, feature, or main)  
+3. Make changes, commit, and push  
+4. Open Pull Requests to merge changes  
 
-## Create Standalone Executable
+Tools Used  
+- Git  
+- GitHub  
 
-```shell
-pip install pyinstaller
-pyinstaller --onefile -w calc.py
-```
+Files  
+- .gitignore - Specifies files to ignore in version control  
+- README.md - Project documentation  
+
